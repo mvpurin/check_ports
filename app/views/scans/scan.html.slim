@@ -1,0 +1,10 @@
+p= "Hello, #{current_user.email}"
+
+p= form_with model: @scan, id: 'scan-form', class: "scan-form", local: false, data: { type: :json } do |f|
+  p= f.label :target, 'Insert IP / URI below:'
+  p= f.text_field :target
+  p= f.hidden_field :format, value: "json"
+  p= f.submit 'Scan'
+
+.scan-results id="scan-results"
+
